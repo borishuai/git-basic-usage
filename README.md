@@ -79,5 +79,11 @@ git branch -D hello, 强行删除本地hello分枝，不管hello分枝的所有c
 git branch -d　-r origin/remote-branch, 删除远程分枝remote-branch  
 git branch -m branch1 branch2, 将分枝branch1的名字改成branch2  
 
-
+### 13 清理Git未跟踪的文件
+主要用于清理Git未跟踪且不需要的文件，比如临时文件、日志等，当然如果比较有规律的还是建议加到.gitignore文件中去，当然这个命令也可用于删除.gitignore中包含的文件。
+[git clean](http://git-scm.com/docs/git-clean), "-i", "-n", "-f"三个参数必须要选择其中一个，“-i”表示交互的方式删除，"-n"不真的删除文件，只是告诉你哪些文件会被删除，"-f"直接删除文件。如果要删除文件夹，还要加上"-d"
+#### Example:
+git clean　-f，删除当前目录下面所有未跟踪文件
+git clean　-f -d，删除所有未跟踪文件和文件夹
+git clean　-n -d，提示哪些文件和文件夹会被删除
  
