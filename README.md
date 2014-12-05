@@ -28,7 +28,7 @@
 ### 5 更新分枝(合并远程和本地的分枝)
 [git pull](http://git-scm.com/docs/git-pull)
 ### Example:
-git pull origin master，将远程和master分枝和本地的master分枝合并，其实可以理解为更新了远程分枝的代码到本地来。
+* git pull origin master，将远程和master分枝和本地的master分枝合并，其实可以理解为更新了远程分枝的代码到本地来。
 
 ### 6 提交分枝到远程服务器
 [git push](http://git-scm.com/docs/git-push)
@@ -45,8 +45,8 @@ git pull origin master，将远程和master分枝和本地的master分枝合并�
 对于Git中的文件或文件夹，如果我们要对它们进行删除，我们同样要通过Git命令来操作，而不能通过操作系统直接操作。
 [git rm](http://git-scm.com/docs/git-rm)
 #### Example:
-git rm hello.txt, 删除hello.txt文件
-git rm -rf abc,　删除文件夹abc及里面的所有内容
+* git rm hello.txt, 删除hello.txt文件
+* git rm -rf abc,　删除文件夹abc及里面的所有内容
 
 ### 9 移动文件或文件夹
 对于Git中的文件或文件夹，如果我们要对它们进行移动，我们同样要通过Git命令来操作，而不能通过操作系统直接操作。
@@ -57,6 +57,7 @@ git rm -rf abc,　删除文件夹abc及里面的所有内容
 
 ### 10 用暂存区文件覆盖本地文件
 通常当我们对本地文件作了一些修改后打算放弃这些修改，使它回到修改前的状态时使用。
+
 [git checkout](http://git-scm.com/docs/git-checkout)
 #### Example:
 * git checkout hello.txt,　用远程的hello.txt覆盖本地的hello.txt文件
@@ -81,6 +82,7 @@ git rm -rf abc,　删除文件夹abc及里面的所有内容
 
 ### 13　文件比较
 可以用于工作区、暂存区以及当前分枝的之间的比较
+
 [git diff](http://git-scm.com/docs/git-diff)
 #### Example:
 * git diff,　工作区和暂存区之间的比较  
@@ -90,6 +92,7 @@ git rm -rf abc,　删除文件夹abc及里面的所有内容
 
 ### 1４ 重置版本
 如果用git add添加了不想要的文件或提交不想要了，可以用git reset来重置，这个命令比较强大也比较危险，要小心使用。
+
 [git reset](http://git-scm.com/docs/git-reset), "--hard", "--soft", "--mixed"三个参数必须要选择其中一个，默认是"--mixed"，“--hard”表示重设（reset） index和working directory，自从<commit>以来在working directory中的任何改变都被丢弃，并把HEAD指向<commit>，"--soft"是index和working directory中的内容不作任何改变，仅仅把HEAD指向<commit>，"-－mixed"是reset index和当前分枝，但是不reset working directory
 #### Example:
 * git reset, 重置暂存区，就是所有没有执行git commit之前的git add动作被取消，这常用于将错误的文件加到暂存区后进行回退
@@ -101,6 +104,7 @@ git rm -rf abc,　删除文件夹abc及里面的所有内容
 
 ### 15 清理Git未跟踪的文件
 主要用于清理Git未跟踪且不需要的文件，比如临时文件、日志等，当然如果比较有规律的还是建议加到.gitignore文件中去，当然这个命令也可用于删除.gitignore中包含的文件。
+
 [git clean](http://git-scm.com/docs/git-clean), "-i", "-n", "-f"三个参数必须要选择其中一个，“-i”表示交互的方式删除，"-n"不真的删除文件，只是告诉你哪些文件会被删除，"-f"直接删除文件。如果要删除文件夹，还要加上"-d"
 #### Example:
 * git clean　-f，删除当前目录下面所有未跟踪文件
