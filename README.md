@@ -43,6 +43,7 @@
 
 ### 8 删除文件或文件夹
 对于Git中的文件或文件夹，如果我们要对它们进行删除，我们同样要通过Git命令来操作，而不能通过操作系统直接操作。
+
 [git rm](http://git-scm.com/docs/git-rm)
 #### Example:
 * git rm hello.txt, 删除hello.txt文件
@@ -50,6 +51,7 @@
 
 ### 9 移动文件或文件夹
 对于Git中的文件或文件夹，如果我们要对它们进行移动，我们同样要通过Git命令来操作，而不能通过操作系统直接操作。
+
 [git mv](http://git-scm.com/docs/git-mv)
 #### Example:
 * git mv hello.txt hello,　将hello.txt移动到hello文件夹下面  
