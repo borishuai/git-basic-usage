@@ -55,12 +55,13 @@
 * git mv hello.txt hello,　将hello.txt移动到hello文件夹下面  
 * git mv hello.txt hello/abcd.txt, 将hello.txt移动到hello文件夹下面，同时将名字修改为abcd.txt
 
-### 10 用暂存区文件覆盖本地文件
-通常当我们对本地文件作了一些修改后打算放弃这些修改，使它回到修改前的状态时使用。
+### 10 取消本地文件的修改
+通常当我们对本地文件作了一些修改后打算放弃这些修改，使它回到修改前的状态时使用。它的原理是使用暂存区的文件替换本地的文件，如果之前执行过git add但没有执行git commit，则用git add前的文件覆盖当前文件。
 
 [git checkout](http://git-scm.com/docs/git-checkout)
 #### Example:
-* git checkout hello.txt,　用远程的hello.txt覆盖本地的hello.txt文件
+* git checkout hello.txt,　用暂存区的hello.txt覆盖本地的hello.txt文件
+* git checkout .,　用暂存区的文件覆盖本地的所有文件
 
 ### 11 切换分枝
 [git checkout](http://git-scm.com/docs/git-checkout)
@@ -108,6 +109,6 @@
 [git clean](http://git-scm.com/docs/git-clean), "-i", "-n", "-f"三个参数必须要选择其中一个，“-i”表示交互的方式删除，"-n"不真的删除文件，只是告诉你哪些文件会被删除，"-f"直接删除文件。如果要删除文件夹，还要加上"-d"
 #### Example:
 * git clean　-f，删除当前目录下面所有未跟踪文件
-* git clean　-f -d，删除所有未跟踪文件和文件夹
-* git clean　-n -d，提示哪些文件和文件夹会被删除
+* git clean -f -d，删除所有未跟踪文件和文件夹
+* git clean -n -d，提示哪些文件和文件夹会被删除
  
