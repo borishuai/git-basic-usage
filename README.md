@@ -80,10 +80,14 @@
 * git branch -a, 列出所有的本地分枝和远程分枝  
 * git branch -d hello，删除本地hello分枝，如果hello分枝的所有commits没有全部合并回它fork出来的分枝，则删除失败  
 * git branch -D hello, 强行删除本地hello分枝，不管hello分枝的所有commits有没有全部合并回它fork出来的分枝，  
-* git branch -d　-r origin/remote-branch, 删除远程分枝remote-branch  
-* git branch -m branch1 branch2, 将分枝branch1的名字改成branch2  
+* git branch -d　-r origin/remote-branch, 删除远程分枝remote-branch在本地的track，不过这样操作通常没有太大的必要性
+* git branch -m branch1 branch2, 将分枝branch1的名字改成branch2 
 
-### 13　文件比较
+### 13 删除远程分枝 
+* git push origin :remote-branch, 删除远程分枝remote-branch，冒号前面的空格不能少，原理是把一个空分支push到server上，相当于删除该分支。
+
+
+### 14　文件比较
 可以用于工作区、暂存区以及当前分枝的之间的比较
 
 [git diff](http://git-scm.com/docs/git-diff)
@@ -93,7 +97,7 @@
 * git diff --staged，暂存区和当前分枝之间的比较的比较
 * git diff --cached和git diff --cached HEAD同上
 
-### 1４ 重置版本
+### 15 重置版本
 如果用git add添加了不想要的文件或提交不想要了，可以用git reset来重置，这个命令比较强大也比较危险，要小心使用。
 
 [git reset](http://git-scm.com/docs/git-reset), "--hard", "--soft", "--mixed"三个参数必须要选择其中一个，默认是"--mixed"，“--hard”表示重设（reset） index和working directory，自从<commit>以来在working directory中的任何改变都被丢弃，并把HEAD指向<commit>，"--soft"是index和working directory中的内容不作任何改变，仅仅把HEAD指向<commit>，"-－mixed"是reset index和当前分枝，但是不reset working directory
@@ -105,7 +109,7 @@
 * git reset HEAD^, 暂存区和分枝的引用都回退一次，工作区不变，所有之前git add过的而没有commit的文件都要重新git add
 * git reset --hard HEAD^,　当前分枝的引用回退到上一次提交，然后用当前分枝的引用覆盖暂存区和当前工作区，意味着之前所有当前正在修改以及最后一次提交都没了
 
-### 15 清理Git未跟踪的文件
+### 16 清理Git未跟踪的文件
 主要用于清理Git未跟踪且不需要的文件，比如临时文件、日志等，当然如果比较有规律的还是建议加到.gitignore文件中去，当然这个命令也可用于删除.gitignore中包含的文件。
 
 [git clean](http://git-scm.com/docs/git-clean), "-i", "-n", "-f"三个参数必须要选择其中一个，“-i”表示交互的方式删除，"-n"不真的删除文件，只是告诉你哪些文件会被删除，"-f"直接删除文件。如果要删除文件夹，还要加上"-d"
@@ -113,4 +117,3 @@
 * git clean　-f，删除当前目录下面所有未跟踪文件
 * git clean -f -d，删除所有未跟踪文件和文件夹
 * git clean -n -d，提示哪些文件和文件夹会被删除
- 
