@@ -94,7 +94,7 @@
 #### Example:
 * git diff,　工作区和暂存区之间的比较  
 * git diff HEAD,　工作区和当前分枝之间的比较，可以理解为当前工作的文件和当前分枝最后一次提交的比较
-* git diff --staged，暂存区和当前分枝之间的比较的比较
+* git diff --staged，暂存区和当前分枝之间的比较的比较，也就是暂存区和最后一次提交的文件进行比较
 * git diff --cached和git diff --cached HEAD同上
 
 ### 15 重置版本
