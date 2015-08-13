@@ -48,6 +48,7 @@
 #### Example:
 * git rm hello.txt, 删除hello.txt文件
 * git rm -rf abc,　删除文件夹abc及里面的所有内容
+* git rm -r --cached <your directory> 从git仓库中删除文件但不删除本地文件
 
 ### 9 移动文件或文件夹
 对于Git中的文件或文件夹，如果我们要对它们进行移动，我们同样要通过Git命令来操作，而不能通过操作系统直接操作。
